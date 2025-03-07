@@ -1,8 +1,6 @@
 resource "aws_instance" "frontend" {
   ami = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
-  security_groups = ["sg-01cbddfc072527f97"]
-  vpc_security_group_ids = ["vpc-098ff8b61c125d049"]
   tags = {
     name="frontend"
   }
@@ -17,7 +15,7 @@ resource "aws_route53_record" "frontend"{
 resource "aws_instance" "mongo" {
   ami = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
-  security_groups = ["sg-01cbddfc072527f97"]
+
   tags = {
     name="mongo"
   }
@@ -32,7 +30,7 @@ resource "aws_route53_record" "mongo"{
 resource "aws_instance" "catalogue" {
   ami = "ami-09c813fb71547fc4f"
   instance_type = "t3.small"
-  security_groups = ["sg-01cbddfc072527f97"]
+
   tags = {
     name="catalogue"
   }
